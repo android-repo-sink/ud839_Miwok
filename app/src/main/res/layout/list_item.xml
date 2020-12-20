@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    android:padding="5dp"
-    android:textSize="48dp"
-    tools:text="Sample Text" />
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:text="Sample Text">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#0000ff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:text="English Word" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#008855"
+        android:textStyle="italic"
+        tools:text="Miwok Translation" />
+</LinearLayout>

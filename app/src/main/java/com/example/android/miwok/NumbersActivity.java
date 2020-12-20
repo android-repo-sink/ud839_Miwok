@@ -25,19 +25,26 @@ public class NumbersActivity extends AppCompatActivity {
     private void populateList() {
 
         // DS - data store
-        String[] numbers = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
-
-//        code to check memory usage in Profiler, comment out the bare-bones array above
-//        ArrayList<String> numbers = new ArrayList<>();
-//        for (Integer i = 0; i < 10000; i++)
-//            numbers.add(i + "");
-
+        // list of words
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("one", "lutti"));
+        words.add(new Word("two", "otiiko"));
+        words.add(new Word("three", "tolookosu"));
+        words.add(new Word("four", "oyyisa"));
+        words.add(new Word("five", "massokka"));
+        words.add(new Word("six", "temmokka"));
+        words.add(new Word("seven", "kenekaku"));
+        words.add(new Word("eight", "kawinta"));
+        words.add(new Word("nine", "wo’e"));
+        words.add(new Word("ten", "na’aacha"));
         // ArrayAdapter - concrete class, displays using getView. Have to specify type of content
         // constructor - context, listitem_view, content array
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.list_item, numbers);
+        ArrayAdapter<Word> arrayAdapter = new ArrayAdapter<>(this, R.layout.list_item, words);
 
         // ListView takes the array as adapter
-        ListView lv = (ListView) findViewById(R.id.numbers_list); // this is the listview
+        ListView lv = (ListView) findViewById(R.id.numbers_list);
+
+        // attach adapter to ListView
         lv.setAdapter(arrayAdapter);
     }
 }
