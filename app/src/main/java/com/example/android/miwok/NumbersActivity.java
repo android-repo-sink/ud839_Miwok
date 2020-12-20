@@ -34,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // ArrayAdapter - concrete class, displays using getView. Have to specify type of content
         // constructor - context, listitem_view, content array
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.listitem_view, numbers);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.list_item, numbers);
 
         // ListView takes the array as adapter
         ListView lv = (ListView) findViewById(R.id.numbers_list); // this is the listview
