@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#0000ff"
-        android:textSize="16dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:text="English Word" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#008855"
+        android:textColor="#007766"
+        android:textSize="16sp"
         android:textStyle="italic"
         tools:text="Miwok Translation" />
 </LinearLayout>
