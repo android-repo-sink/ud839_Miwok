@@ -36,6 +36,8 @@ public class Word {
 
     // Get the image resource id
     public Integer getmImageResourceId() {
+        if (mImageResourceId == null)
+            return -1;
         return mImageResourceId;
     }
 
