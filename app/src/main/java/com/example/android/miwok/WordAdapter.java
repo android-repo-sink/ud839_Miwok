@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -59,17 +60,20 @@ public class WordAdapter extends ArrayAdapter<Word> {
             list_item_view = (LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        Log.d("CustomAdapter", "Reycling started");
-
         // get the relevant content
         Word wordObject = getItem(position);
 
-        // change content of the viewe
-        ((TextView) list_item_view.getChildAt(0)).setText(wordObject.getDefaultTranslation());
-        ((TextView) list_item_view.getChildAt(1)).setText(wordObject.getMiwokTranslation());
-        Log.d("CustomAdapter", "Reycling finished");
+        // change content of the view
+        ((TextView) list_item_view.findViewById(R.id.defaultTranslation)).setText(wordObject.getDefaultTranslation());
+        ((TextView) list_item_view.findViewById(R.id.miwokTranslation)).setText(wordObject.getMiwokTranslation());
 
-        // return the list_item view
+        // change the image
+        Integer content_image_id = wordObject.getmImageResourceId();
+        ImageView content_imageView = (ImageView) list_item_view.findViewById(R.id.list_item_content_image);
+        if (content_image_id == null) // we are dealing with phrases which don't have an image
+            content_imageView.setVisibility(View.GONE);
+        else
+            content_imageView.setImageResource(content_image_id);
         return list_item_view;
     }
 }

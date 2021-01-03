@@ -8,7 +8,9 @@
     android:padding="10dp"
     tools:text="Sample Text">
 
+    <!-- New element FIXME -->
     <ImageView
+        android:id="@+id/list_item_content_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -24,6 +26,7 @@
         tools:text="Sample Text">
 
         <TextView
+            android:id="@+id/defaultTranslation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#0000ff"
@@ -32,6 +35,7 @@
             tools:text="English Word" />
 
         <TextView
+            android:id="@+id/miwokTranslation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#007766"

@@ -4,6 +4,7 @@ package com.example.android.miwok;
 // It is required by ArrayAdapter
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 
 public class Word {
     //    Default translation for the word
@@ -21,6 +22,7 @@ public class Word {
     }
 
     public Word(String mDefaultTranslation, String mMiwokTranslation, Integer mImageResourceId) {
+        this(mDefaultTranslation, mMiwokTranslation);
         this.mImageResourceId = mImageResourceId;
     }
 
@@ -35,9 +37,8 @@ public class Word {
     }
 
     // Get the image resource id
+    @Nullable
     public Integer getmImageResourceId() {
-        if (mImageResourceId == null)
-            return -1;
         return mImageResourceId;
     }
 
