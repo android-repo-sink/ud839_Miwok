@@ -16,9 +16,10 @@
     <!-- For now orange        -->
 
     <LinearLayout
+        android:id="@+id/twoTextLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/category_numbers"
+        android:background="@color/category_phrases"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         tools:text="Sample Text">

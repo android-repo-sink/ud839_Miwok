@@ -33,7 +33,7 @@ public class ColorsActivity extends AppCompatActivity {
 
         // ArrayAdapter - concrete class, displays using getView. Have to specify type of content
         // constructor - context, listitem_view, content array
-        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_colors);
 
         // ListView takes the array as adapter
         ListView lv = (ListView) findViewById(R.id.word_list);

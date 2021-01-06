@@ -32,9 +32,10 @@ public class PhrasesActivity extends AppCompatActivity {
         words.add(new Word("I’m coming.", "әәnәm"));
         words.add(new Word("Let’s go.", "yoowutis"));
         words.add(new Word("Come here.", "әnni'nem"));
+        System.out.println(23);
         // ArrayAdapter - concrete class, displays using getView. Have to specify type of content
         // constructor - context, listitem_view, content array
-        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_phrases);
 
         // ListView takes the array as adapter
         ListView lv = (ListView) findViewById(R.id.word_list);

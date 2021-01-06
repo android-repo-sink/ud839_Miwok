@@ -2,7 +2,9 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,7 +35,9 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten));
         // ArrayAdapter - concrete class, displays using getView. Have to specify type of content
         // constructor - context, listitem_view, content array
-        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter arrayAdapter = new WordAdapter(this, R.layout.list_item, words, R.color.category_numbers);
+
+        Log.d("Numsss", ((Integer) R.color.category_numbers).toString());
 
         // ListView takes the array as adapter
         ListView lv = (ListView) findViewById(R.id.word_list);

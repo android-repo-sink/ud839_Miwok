@@ -3,45 +3,49 @@ package com.example.android.miwok;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(@NonNull Context context, int resource) {
+    private final int mtextBackgroundColorId; // color for LinearLayout of texts
+
+    public WordAdapter(@NonNull Context context, int resource, int textBackgroundColorId) {
         super(context, resource);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
-    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId) {
+    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId, int textBackgroundColorId) {
         super(context, resource, textViewResourceId);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
-    public WordAdapter(@NonNull Context context, int resource, @NonNull Word[] objects) {
+    public WordAdapter(@NonNull Context context, int resource, @NonNull Word[] objects, int textBackgroundColorId) {
         super(context, resource, objects);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
-    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull Word[] objects) {
+    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull Word[] objects, int textBackgroundColorId) {
         super(context, resource, textViewResourceId, objects);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
-    public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects) {
+    public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects, int textBackgroundColorId) {
         super(context, resource, objects);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
-    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull List<Word> objects) {
+    public WordAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull List<Word> objects, int textBackgroundColorId) {
         super(context, resource, textViewResourceId, objects);
+        this.mtextBackgroundColorId = textBackgroundColorId;
     }
 
     @NonNull
@@ -58,6 +62,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             // The adapter needs to create list_item views from our XML file, because it maintains the scrap pile.
             // This is done by using LayoutInflater class - it notifies the adapter about new objects.
             list_item_view = (LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            ((LinearLayout)list_item_view.findViewById(R.id.twoTextLinearLayout)).setBackgroundResource(mtextBackgroundColorId); // no need to cast
         }
 
         // get the relevant content
